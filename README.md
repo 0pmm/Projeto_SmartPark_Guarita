@@ -59,6 +59,21 @@ As planilhas `.xlsx` são as versões para entrega no Moodle; o GitHub não most
 
 Veja o [CONTRIBUTING.md](CONTRIBUTING.md) para o fluxo de branches e commits. O acompanhamento das tarefas é feito em Issues e Projects.
 
+## Código
+
+O aplicativo Android está em [`SmartParkGuarita/`](SmartParkGuarita/), organizado em camadas:
+
+- `domain/`: enums, validação de placa e resultados das consultas.
+- `data/`: entidades, DAOs, banco (Room) e o repositório com as regras de negócio.
+- `viewmodel/`: ViewModels do porteiro e do painel.
+- `ui/`: telas em Jetpack Compose e navegação.
+
+Já estão implementados o fluxo do porteiro (consultar placa, registrar entrada e saída, veículos presentes) e o painel de ocupação. As telas de Administrador e Servidor/Professor estão em desenvolvimento.
+
 ## Como rodar
 
-A ser adicionado quando o projeto Android estiver no repositório.
+1. Abra a pasta `SmartParkGuarita/` no Android Studio e espere o Gradle sincronizar.
+2. Escolha um emulador ou um tablet Android (API 26 ou superior, com a depuração USB ligada) e clique em Run.
+3. Na primeira execução o app cria dados fictícios. Para testar, na tela do porteiro use `ABC1D23` (veículo cadastrado), `BRA2E19` (troca temporária de exemplo, válida por 7 dias) e `AAA0000` (não autorizado).
+
+Testes unitários: `./gradlew :app:testDebugUnitTest` dentro da pasta `SmartParkGuarita/`.

@@ -12,20 +12,22 @@ Formato do template SpinOff: descrição, testes de aceitação e protótipo. To
 
 ## Resumo
 
-| Nº | Perfil | História | Prioridade | Estimativa |
+| Nº | Perfil | História | Prioridade | Situação |
 |---|---|---|---|---|
-| US01 | Porteiro | Consultar placa | Alta | a definir |
-| US02 | Porteiro | Registrar entrada | Alta | a definir |
-| US03 | Porteiro | Registrar saída | Alta | a definir |
-| US04 | Porteiro | Ver veículos presentes | Média | a definir |
-| US05 | Administrador | Gerenciar servidores | Alta | a definir |
-| US06 | Administrador | Gerenciar veículos | Alta | a definir |
-| US07 | Administrador | Cadastrar troca temporária | Alta | a definir |
-| US08 | Administrador | Aprovar ou recusar solicitação | Média | a definir |
-| US09 | Servidor | Solicitar troca temporária | Média | a definir |
-| US10 | Servidor | Acompanhar solicitação | Baixa | a definir |
-| US11 | Painel | Ver ocupação atual | Média | a definir |
-| US12 | Painel | Ver entradas e saídas por turno | Baixa | a definir |
+| US01 | Porteiro | Consultar placa | Alta | Implementada |
+| US02 | Porteiro | Registrar entrada | Alta | Implementada |
+| US03 | Porteiro | Registrar saída | Alta | Implementada |
+| US04 | Porteiro | Ver veículos presentes | Média | Implementada |
+| US05 | Administrador | Gerenciar servidores | Alta | Implementada |
+| US06 | Administrador | Gerenciar veículos | Alta | Implementada |
+| US07 | Administrador | Cadastrar troca temporária | Alta | Implementada |
+| US08 | Administrador | Aprovar ou recusar solicitação | Média | Implementada |
+| US09 | Servidor | Solicitar troca temporária | Média | Implementada |
+| US10 | Servidor | Acompanhar solicitação | Baixa | Implementada |
+| US11 | Painel | Ver ocupação atual | Média | Implementada |
+| US12 | Painel | Ver entradas e saídas por turno | Baixa | Implementada |
+
+"Implementada" quer dizer que a funcionalidade existe no app. Os testes de aceitação de cada história ainda precisam ser executados e registrados com prints.
 
 A prioridade é uma sugestão: o TAP diz para entregar primeiro o fluxo do porteiro.
 

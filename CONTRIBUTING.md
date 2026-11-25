@@ -1,7 +1,3 @@
-# Como trabalhar neste repositório
-
-Guia curto para a equipe. O prazo é apertado, então o fluxo é simples.
-
 ## Antes de começar a trabalhar
 
 1. Abra o GitHub Desktop e clique em **Fetch origin** e depois em **Pull origin** para trazer o que os outros fizeram.

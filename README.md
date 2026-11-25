@@ -27,7 +27,29 @@ Product Owner: Prof. Fabio Santos.
 
 ## Estrutura
 
-- `Documentos/`: artefatos do SpinOff (TAP, atas, modelos)
+- `Documentos/`: artefatos do SpinOff
+
+| Documento | Arquivo |
+|---|---|
+| Termo de Abertura do Projeto | `TAP_SmartPark_Guarita_v0.1.pdf`, `TAP_v1.md` |
+| Visão | `Visao.md` |
+| Necessidades do Cliente | `Necessidades_do_Cliente.md` |
+| Perguntas da entrevista | `Entrevista_Perguntas.md` |
+| Ata de Reunião | `Ata_Reuniao_Entrevista.md` |
+| Histórias de Usuário | `Historias_de_Usuario.md` |
+| Backlog do Produto | `Backlog_do_Produto.xlsx` |
+| Backlog do Sprint e Quadro de Tarefas | `Backlog_Sprint_e_Quadro.xlsx` |
+| Modelo de Casos de Uso | `Modelo_Casos_de_Uso.md` |
+| Protótipo | `Prototipo.md` |
+| Modelo de Arquitetura | `Modelo_Arquitetura.md` |
+| Checklist de Projeto | `Checklist_de_Projeto.md` |
+| Issues, labels e milestones para o GitHub | `Issues_GitHub.md` |
+
+Os arquivos `Template - *` são os modelos do SpinOff. A pasta `Documentos/docx/` tem as versões em Word dos documentos em Markdown.
+
+## Como contribuir
+
+Veja o [CONTRIBUTING.md](CONTRIBUTING.md) para o fluxo de branches e commits. O acompanhamento das tarefas é feito em Issues e Projects.
 
 ## Como rodar
 

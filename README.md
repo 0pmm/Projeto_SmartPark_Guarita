@@ -25,27 +25,35 @@ Kotlin, Jetpack Compose e Room (persistência local). Arquitetura em camadas: te
 
 Product Owner: Prof. Fabio Santos.
 
-## Estrutura
+## Acompanhamento
 
-- `Documentos/`: artefatos do SpinOff
+- [Backlog do Produto](Documentos/Backlog_do_Produto.md): lista priorizada de histórias e tarefas.
+- [Quadro de Tarefas](Documentos/Quadro_de_Tarefas.md): tarefas dos sprints, com caixas para marcar o que está pronto.
+- [Histórias de Usuário](Documentos/Historias_de_Usuario.md): descrição e testes de aceitação.
+
+Prazos: Etapa 3 em 27/11/2026 e apresentação em 04/12/2026.
+
+## Documentos
+
+Tudo está em [`Documentos/`](Documentos/), organizado por artefato do SpinOff.
 
 | Documento | Arquivo |
 |---|---|
-| Termo de Abertura do Projeto | `TAP_SmartPark_Guarita_v0.1.pdf`, `TAP_v1.md` |
-| Visão | `Visao.md` |
-| Necessidades do Cliente | `Necessidades_do_Cliente.md` |
-| Perguntas da entrevista | `Entrevista_Perguntas.md` |
-| Ata de Reunião | `Ata_Reuniao_Entrevista.md` |
-| Histórias de Usuário | `Historias_de_Usuario.md` |
-| Backlog do Produto | `Backlog_do_Produto.xlsx` |
-| Backlog do Sprint e Quadro de Tarefas | `Backlog_Sprint_e_Quadro.xlsx` |
-| Modelo de Casos de Uso | `Modelo_Casos_de_Uso.md` |
-| Protótipo | `Prototipo.md` |
-| Modelo de Arquitetura | `Modelo_Arquitetura.md` |
-| Checklist de Projeto | `Checklist_de_Projeto.md` |
-| Issues, labels e milestones para o GitHub | `Issues_GitHub.md` |
+| Termo de Abertura do Projeto | [TAP_SmartPark_Guarita_v0.1.pdf](Documentos/TAP_SmartPark_Guarita_v0.1.pdf), [TAP_v1.md](Documentos/TAP_v1.md) |
+| Visão | [Visao.md](Documentos/Visao.md) |
+| Necessidades do Cliente | [Necessidades_do_Cliente.md](Documentos/Necessidades_do_Cliente.md) |
+| Perguntas da entrevista | [Entrevista_Perguntas.md](Documentos/Entrevista_Perguntas.md) |
+| Ata de Reunião | [Ata_Reuniao_Entrevista.md](Documentos/Ata_Reuniao_Entrevista.md) |
+| Histórias de Usuário | [Historias_de_Usuario.md](Documentos/Historias_de_Usuario.md) |
+| Backlog do Produto | [Backlog_do_Produto.md](Documentos/Backlog_do_Produto.md) e `Backlog_do_Produto.xlsx` |
+| Backlog do Sprint e Quadro de Tarefas | [Quadro_de_Tarefas.md](Documentos/Quadro_de_Tarefas.md) e `Backlog_Sprint_e_Quadro.xlsx` |
+| Modelo de Casos de Uso | [Modelo_Casos_de_Uso.md](Documentos/Modelo_Casos_de_Uso.md) |
+| Protótipo | [Prototipo.md](Documentos/Prototipo.md) |
+| Modelo de Arquitetura | [Modelo_Arquitetura.md](Documentos/Modelo_Arquitetura.md) |
+| Checklist de Projeto | [Checklist_de_Projeto.md](Documentos/Checklist_de_Projeto.md) |
+| Issues, labels e milestones | [Issues_GitHub.md](Documentos/Issues_GitHub.md) |
 
-Os arquivos `Template - *` são os modelos do SpinOff. A pasta `Documentos/docx/` tem as versões em Word dos documentos em Markdown.
+As planilhas `.xlsx` são as versões para entrega no Moodle; o GitHub não mostra o conteúdo delas, por isso existem as versões em Markdown. Os arquivos `Template - *` são os modelos do SpinOff, e a pasta `Documentos/docx/` tem as versões em Word.
 
 ## Como contribuir
 

@@ -7,10 +7,13 @@
 
 Uma branch por pessoa ou por funcionalidade, com o nome no formato `nome/assunto`:
 
-- `gustavo/painel`
+- `gustavob/painel`
+- `gustavoc/telas-compose`
 - `vitor/room-entidades`
 - `pedro/projeto-base`
 - `lucas/testes-us01`
+
+Como há dois Gustavos na equipe, use `gustavob` para Gustavo Silva Guimarães de Brito e `gustavoc` para Gustavo Carvalho.
 
 Para mudanças pequenas de documentação, pode-se commitar direto na `main`, desde que cada pessoa mexa em arquivos diferentes.
 

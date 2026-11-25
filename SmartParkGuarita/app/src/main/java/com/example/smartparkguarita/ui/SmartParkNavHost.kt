@@ -44,13 +44,11 @@ fun SmartParkNavHost() {
             )
         }
 
-        // Porteiro
         composable(Rotas.PORTEIRO) {
             PorteiroScreen(aoVoltar = voltar, aoVerPresentes = { navegacao.navigate(Rotas.PRESENTES) })
         }
         composable(Rotas.PRESENTES) { PresentesScreen(aoVoltar = voltar) }
 
-        // Administrador
         composable(Rotas.ADMINISTRADOR) {
             AdminHomeScreen(aoVoltar = voltar, aoNavegar = { rota -> navegacao.navigate(rota) })
         }
@@ -60,7 +58,6 @@ fun SmartParkNavHost() {
         composable(Rotas.ADMIN_SOLICITACOES) { SolicitacoesScreen(aoVoltar = voltar) }
         composable(Rotas.PAINEL) { PainelScreen(aoVoltar = voltar) }
 
-        // Servidor/Professor
         composable(Rotas.SERVIDOR) {
             ServidorEscolherScreen(
                 aoVoltar = voltar,

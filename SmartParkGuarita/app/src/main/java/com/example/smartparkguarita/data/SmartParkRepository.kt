@@ -14,14 +14,11 @@ import com.example.smartparkguarita.domain.Turno
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-/** Regras de negócio do SmartPark Guarita. As telas falam com o repositório pelos ViewModels. */
 class SmartParkRepository(db: AppDatabase) {
     private val servidorDao = db.servidorDao()
     private val veiculoDao = db.veiculoDao()
     private val trocaDao = db.trocaTemporariaDao()
     private val registroDao = db.registroAcessoDao()
-
-    // ---------- Consultas (fluxos observados pelas telas) ----------
 
     fun servidores(): Flow<List<Servidor>> = servidorDao.todos()
 
@@ -46,8 +43,6 @@ class SmartParkRepository(db: AppDatabase) {
             )
         }
     }
-
-    // ---------- Portaria ----------
 
     /**
      * Regra de autorização: vale a troca temporária aprovada e dentro da validade;
@@ -99,8 +94,6 @@ class SmartParkRepository(db: AppDatabase) {
         return ResultadoOperacao.Sucesso("Saída registrada: $placa")
     }
 
-    // ---------- Administração: servidores e veículos ----------
-
     suspend fun salvarServidor(servidor: Servidor): ResultadoOperacao {
         if (servidor.nome.isBlank()) return ResultadoOperacao.Erro("Informe o nome do servidor")
         if (servidor.matricula.isBlank()) return ResultadoOperacao.Erro("Informe a matrícula")
@@ -123,8 +116,6 @@ class SmartParkRepository(db: AppDatabase) {
     }
 
     suspend fun excluirVeiculo(veiculo: Veiculo) = veiculoDao.excluir(veiculo)
-
-    // ---------- Trocas temporárias ----------
 
     /** Cadastro feito pelo administrador: já nasce aprovado. */
     suspend fun cadastrarTroca(
@@ -164,8 +155,6 @@ class SmartParkRepository(db: AppDatabase) {
         val mensagem = if (status == StatusSolicitacao.APROVADA) "Troca temporária cadastrada" else "Solicitação enviada"
         return ResultadoOperacao.Sucesso(mensagem)
     }
-
-    // ---------- Dados de exemplo (fictícios) ----------
 
     /** Cria dados fictícios na primeira execução, para testes e para a demonstração. */
     suspend fun popularDadosDeExemplo(agora: Long = System.currentTimeMillis()) {

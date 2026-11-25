@@ -11,10 +11,10 @@ Quando algo mudar, atualize este arquivo e a planilha.
 | Id | Fase | Item | Perfil | Prioridade | Sprint | Status |
 |---|---|---|---|---|---|---|
 | P01 | Iniciação | Entrevistar o cliente por e-mail e registrar na Ata | Processo | Alta | Sprint 1 | A fazer |
-| P02 | Iniciação | Termo de Abertura do Projeto v1 | Processo | Alta | Sprint 1 | A fazer |
-| P03 | Iniciação | Documento Visão e Necessidades do Cliente | Processo | Alta | Sprint 1 | A fazer |
-| P04 | Iniciação | Modelo de Caso de Uso e Backlog do Produto | Processo | Alta | Sprint 1 | A fazer |
-| P05 | Iniciação | Protótipo das telas (rascunho) | Processo | Alta | Sprint 1 | A fazer |
+| P02 | Iniciação | Termo de Abertura do Projeto v1 | Processo | Alta | Sprint 1 | Fazendo |
+| P03 | Iniciação | Documento Visão e Necessidades do Cliente | Processo | Alta | Sprint 1 | Fazendo |
+| P04 | Iniciação | Modelo de Caso de Uso e Backlog do Produto | Processo | Alta | Sprint 1 | Fazendo |
+| P05 | Iniciação | Protótipo das telas (rascunho) | Processo | Alta | Sprint 1 | Fazendo |
 | P06 | Elaboração | Preparar ambiente (Android Studio, repositório) e definir arquitetura | Processo | Alta | Sprint 2 | Feito |
 | US01 | Elaboração | US01 - Consultar placa (escolhida para testar a arquitetura) | Porteiro | Alta | Sprint 2 | Fazendo |
 | US02 | Construção | US02 - Registrar entrada | Porteiro | Alta | Sprint 2 | Fazendo |

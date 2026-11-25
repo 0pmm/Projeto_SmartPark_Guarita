@@ -3,14 +3,12 @@ package com.example.smartparkguarita.domain
 import java.time.Instant
 import java.time.ZoneId
 
-/** Perfis do aplicativo, escolhidos na tela inicial. */
 enum class Perfil(val rotulo: String, val descricao: String) {
     PORTEIRO("Porteiro", "Consultar placas e registrar entradas e saídas"),
     ADMINISTRADOR("Administrador", "Cadastros, trocas temporárias, solicitações e painel"),
     SERVIDOR("Servidor/Professor", "Pedir uma troca temporária e acompanhar o pedido")
 }
 
-/** Situação de uma solicitação de troca temporária de veículo. */
 enum class StatusSolicitacao(val rotulo: String) {
     PENDENTE("Pendente"),
     APROVADA("Aprovada"),
@@ -49,7 +47,6 @@ object Placa {
     fun valida(texto: String): Boolean = padrao.matches(normalizar(texto))
 }
 
-/** Resultado da consulta de uma placa na portaria. */
 sealed interface ResultadoConsulta {
     data class Autorizado(val placa: String, val servidor: String, val modelo: String) : ResultadoConsulta
 
@@ -60,7 +57,6 @@ sealed interface ResultadoConsulta {
     data object PlacaInvalida : ResultadoConsulta
 }
 
-/** Resultado de uma operação que pode falhar com uma mensagem para o usuário. */
 sealed interface ResultadoOperacao {
     data class Sucesso(val mensagem: String) : ResultadoOperacao
 
@@ -81,5 +77,4 @@ enum class Duracao(val rotulo: String, private val dias: Long) {
     }
 }
 
-/** Entradas e saídas de um turno, usadas no painel. */
 data class MovimentoTurno(val turno: Turno, val entradas: Int, val saidas: Int)

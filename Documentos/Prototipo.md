@@ -1,9 +1,9 @@
 # Protótipo das telas
 
 **SPG - SmartPark Guarita**
-Versão 0.1: rascunho em baixa fidelidade, a refinar com a equipe e depois da entrevista.
+Versão 1.0. Desenho das telas como foram implementadas no app. Os dados são fictícios.
 
-Os desenhos abaixo mostram a organização de cada tela. Os dados são fictícios. O protótipo refinado deve ser feito em uma ferramenta de desenho (por exemplo Figma ou papel e foto) e referenciado nas histórias de usuário.
+Os desenhos são esquemas simples. Para a versão refinada do relatório, use prints do app rodando no tablet.
 
 ## 1. Fluxo de navegação
 
@@ -11,172 +11,145 @@ Os desenhos abaixo mostram a organização de cada tela. Os dados são fictício
 flowchart TD
     Inicio[Seleção de perfil] --> Porteiro[Porteiro]
     Inicio --> Admin[Administrador]
-    Inicio --> Servidor[Servidor/Professor]
-    Porteiro --> Consulta[Consultar placa] --> Resultado[Resultado] --> Entrada[Registrar entrada]
-    Porteiro --> Saida[Registrar saída]
+    Inicio --> Quem[Quem é você?]
     Porteiro --> Presentes[Veículos presentes]
+    Admin --> Solicitacoes[Solicitações]
     Admin --> Servidores[Servidores]
     Admin --> Veiculos[Veículos]
     Admin --> Trocas[Trocas temporárias]
-    Admin --> Solicitacoes[Solicitações]
     Admin --> Painel[Painel]
-    Servidor --> Nova[Nova solicitação]
-    Servidor --> Minhas[Minhas solicitações]
+    Quem --> ServidorHome[Meus pedidos e nova solicitação]
 ```
 
 ## 2. Seleção de perfil
 
 ```
 +--------------------------------------+
-|        SmartPark Guarita             |
+| SmartPark Guarita                    |
 |                                      |
-|     Escolha o seu perfil             |
+|  Controle do estacionamento do       |
+|  câmpus                              |
 |                                      |
-|   [        Porteiro              ]   |
-|   [        Administrador         ]   |
-|   [        Servidor/Professor    ]   |
-|                                      |
+|  Escolha o seu perfil                |
+|  +--------------------------------+  |
+|  | Porteiro                       |  |
+|  | Consultar placas e registrar   |  |
+|  | entradas e saídas              |  |
+|  +--------------------------------+  |
+|  | Administrador                  |  |
+|  +--------------------------------+  |
+|  | Servidor/Professor             |  |
+|  +--------------------------------+  |
 +--------------------------------------+
 ```
 
-## 3. Porteiro: consultar placa
+## 3. Porteiro
 
 ```
 +--------------------------------------+
-| < Porteiro                           |
+| < Voltar   Porteiro                  |
 |                                      |
 |  Placa                               |
 |  [ BRA2E19                        ]  |
-|                                      |
 |  [          Consultar             ]  |
 |                                      |
 |  +--------------------------------+  |
-|  |  AUTORIZADO                    |  |
-|  |  Troca temporária do professor |  |
-|  |  Válida até 23h59 de hoje      |  |
+|  | AUTORIZADO - TROCA TEMPORÁRIA  |  |
+|  | Prof. Exemplo Silva. Válida    |  |
+|  | até 01/12/2026 23:59           |  |
 |  +--------------------------------+  |
 |                                      |
-|  [ Registrar entrada ]               |
+|  [      Registrar entrada         ]  |
+|  [      Registrar saída           ]  |
+|  [  Veículos presentes (3)        ]  |
 +--------------------------------------+
 ```
 
-Resultados possíveis: "Autorizado" (verde), "Autorizado por troca temporária" (verde, com validade), "Não autorizado" (vermelho).
+O cartão de resultado é verde para "Autorizado" e "Autorizado por troca temporária", e vermelho para "Não autorizado" e "Placa inválida". O botão de entrada só fica ativo depois de uma consulta que autorizou o veículo.
 
-## 4. Porteiro: registrar saída e veículos presentes
+Veículos presentes: lista de cartões com a placa, a hora de entrada e o porteiro.
 
-```
-+--------------------------------------+       +--------------------------------------+
-| < Registrar saída                    |       | < Veículos presentes (3)             |
-|                                      |       |                                      |
-|  Placa                               |       |  BRA2E19  Onix prata    08:12        |
-|  [ ABC1D23                        ]  |       |  ABC1D23  Gol branco    08:40        |
-|                                      |       |  XYZ9K88  Civic preto   09:05        |
-|  [        Registrar saída         ]  |       |                                      |
-+--------------------------------------+       +--------------------------------------+
-```
-
-## 5. Administrador: menu e cadastros
-
-```
-+--------------------------------------+       +--------------------------------------+
-| Administrador                        |       | < Novo servidor                      |
-|                                      |       |                                      |
-|  [ Servidores              ]         |       |  Nome        [                    ]  |
-|  [ Veículos                ]         |       |  Matrícula   [                    ]  |
-|  [ Trocas temporárias      ]         |       |                                      |
-|  [ Solicitações (2)        ]         |       |  [ Cancelar ]        [ Salvar ]      |
-|  [ Painel                  ]         |       |                                      |
-+--------------------------------------+       +--------------------------------------+
-```
-
-Os campos do cadastro dependem das respostas 6 e 7 da entrevista.
-
-```
-+--------------------------------------+       +--------------------------------------+
-| < Novo veículo                       |       | < Nova troca temporária              |
-|                                      |       |                                      |
-|  Servidor    [ Selecionar        v ] |       |  Servidor   [ Selecionar        v ]  |
-|  Placa       [                    ]  |       |  Placa      [                    ]   |
-|  Modelo      [                    ]  |       |  Modelo     [                    ]   |
-|  Cor         [                    ]  |       |  Cor        [                    ]   |
-|                                      |       |  Motivo     [                    ]   |
-|  [ Cancelar ]        [ Salvar ]      |       |  Início     [ dd/mm/aaaa hh:mm   ]   |
-|                                      |       |  Fim        [ dd/mm/aaaa hh:mm   ]   |
-|                                      |       |  [ Cancelar ]        [ Salvar ]      |
-+--------------------------------------+       +--------------------------------------+
-```
-
-## 6. Administrador: solicitações
+## 4. Administrador
 
 ```
 +--------------------------------------+
-| < Solicitações pendentes             |
+| < Voltar   Administrador             |
 |                                      |
-|  Prof. Exemplo Silva                 |
-|  BRA2E19, Onix prata                 |
-|  Motivo: carro da esposa             |
-|  Hoje, até 23h59                     |
-|  [ Recusar ]          [ Aprovar ]    |
-|  ------------------------------------|
-|  Servidor Teste Souza                |
-|  ...                                 |
+|  +--------------------------------+  |
+|  | Solicitações        [2 pend.]  |  |
+|  | Aprovar ou recusar pedidos     |  |
+|  +--------------------------------+  |
+|  | Servidores                     |  |
+|  +--------------------------------+  |
+|  | Veículos                       |  |
+|  +--------------------------------+  |
+|  | Trocas temporárias             |  |
+|  +--------------------------------+  |
+|  | Painel                         |  |
+|  +--------------------------------+  |
 +--------------------------------------+
 ```
 
-## 7. Servidor/Professor
+**Servidores e Veículos:** botão "Novo" no topo e uma lista de cartões com Editar e Excluir. O cadastro e a edição abrem em um diálogo; excluir pede confirmação.
+
+```
++--------------------------------------+
+| Novo veículo                         |
+|  Placa   [                        ]  |
+|  Modelo  [                        ]  |
+|  Cor     [                        ]  |
+|  [ Servidor: Prof. Exemplo Silva  ]  |
+|              [Cancelar]   [Salvar]   |
++--------------------------------------+
+```
+
+**Trocas temporárias:** lista com a placa, o status em uma etiqueta colorida (pendente em amarelo, aprovada em verde, recusada em vermelho), o servidor, o motivo e o período. O diálogo de nova troca pede servidor, placa, modelo, cor, motivo e a validade: Hoje, 3 dias ou 7 dias.
+
+**Solicitações:** lista das pendentes, cada uma com os botões Recusar e Aprovar.
+
+## 5. Servidor/Professor
 
 ```
 +--------------------------------------+       +--------------------------------------+
-| Servidor/Professor                   |       | < Minhas solicitações                |
+| < Voltar   Quem é você?              |       | < Voltar   Servidor/Professor        |
 |                                      |       |                                      |
-|  [ Nova solicitação        ]         |       |  BRA2E19   Hoje      APROVADA        |
-|  [ Minhas solicitações     ]         |       |  DEF4G56   03/12     PENDENTE        |
-|                                      |       |  GHI7J89   01/12     RECUSADA        |
+|  +--------------------------------+  |       |  Olá, Prof. Exemplo Silva            |
+|  | Prof. Exemplo Silva            |  |       |  [ Nova solicitação de troca ]       |
+|  | Matrícula 2020001              |  |       |                                      |
+|  +--------------------------------+  |       |  Meus pedidos                        |
+|  | Servidor Teste Souza           |  |       |  BRA2E19   [APROVADA]                |
+|  +--------------------------------+  |       |  DEF4G56   [PENDENTE]                |
 +--------------------------------------+       +--------------------------------------+
-
-+--------------------------------------+
-| < Nova solicitação                   |
-|                                      |
-|  Placa       [                    ]  |
-|  Modelo      [                    ]  |
-|  Cor         [                    ]  |
-|  Motivo      [                    ]  |
-|  Período     [ início ] [ fim ]      |
-|                                      |
-|  [ Cancelar ]        [ Enviar ]      |
-+--------------------------------------+
 ```
 
-## 8. Painel
+O diálogo de nova solicitação pede placa, modelo, cor, motivo e a validade (Hoje, 3 dias ou 7 dias).
+
+## 6. Painel
 
 ```
 +--------------------------------------+
-| < Painel                             |
+| < Voltar   Painel                    |
 |                                      |
 |  Ocupação atual                      |
 |  3 veículos no estacionamento        |
 |                                      |
 |  Entradas e saídas por turno         |
-|  Manhã   entradas 12   saídas  4     |
-|  Tarde   entradas  7   saídas  9     |
-|  Noite   entradas  1   saídas  3     |
+|  Manhã   Entradas: 12   Saídas: 4    |
+|  Tarde   Entradas: 7    Saídas: 9    |
+|  Noite   Entradas: 1    Saídas: 3    |
 +--------------------------------------+
 ```
 
-Os horários de cada turno serão confirmados na entrevista (pergunta 11).
-
-## 9. Referências por história
+## 7. Telas por história
 
 | Tela | Histórias |
 |---|---|
 | Seleção de perfil | todas |
-| Consultar placa | US01, US02 |
-| Registrar saída | US03 |
+| Porteiro (consulta, entrada e saída) | US01, US02, US03 |
 | Veículos presentes | US04 |
-| Novo servidor | US05 |
-| Novo veículo | US06 |
-| Nova troca temporária | US07 |
-| Solicitações pendentes | US08 |
-| Nova solicitação | US09 |
-| Minhas solicitações | US10 |
+| Servidores | US05 |
+| Veículos | US06 |
+| Trocas temporárias | US07 |
+| Solicitações | US08 |
+| Servidor/Professor (nova solicitação e meus pedidos) | US09, US10 |
 | Painel | US11, US12 |

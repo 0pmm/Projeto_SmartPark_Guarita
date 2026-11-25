@@ -46,9 +46,6 @@ interface VeiculoDao {
     @Query("SELECT * FROM veiculo ORDER BY placa")
     fun todos(): Flow<List<Veiculo>>
 
-    @Query("SELECT * FROM veiculo WHERE servidorId = :servidorId ORDER BY placa")
-    fun porServidor(servidorId: Long): Flow<List<Veiculo>>
-
     @Query("SELECT * FROM veiculo WHERE placa = :placa LIMIT 1")
     suspend fun buscarPorPlaca(placa: String): Veiculo?
 }

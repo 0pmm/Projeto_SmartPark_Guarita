@@ -42,7 +42,6 @@ import com.example.smartparkguarita.ui.theme.SucessoFundo
 import com.example.smartparkguarita.ui.theme.SucessoTexto
 import com.example.smartparkguarita.viewmodel.Aviso
 
-/** Mensagem de sucesso (verde) ou de erro (vermelha) mostrada depois de uma ação. */
 @Composable
 fun AvisoTexto(aviso: Aviso?, modifier: Modifier = Modifier) {
     if (aviso == null) return
@@ -92,7 +91,6 @@ fun CartaoMenu(titulo: String, descricao: String, aoClicar: () -> Unit, selo: St
     }
 }
 
-/** Etiqueta colorida com a situação de uma solicitação. */
 @Composable
 fun EtiquetaStatus(status: StatusSolicitacao) {
     val (fundo, texto) = when (status) {

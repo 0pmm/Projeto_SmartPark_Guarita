@@ -65,15 +65,16 @@ O aplicativo Android está em [`SmartParkGuarita/`](SmartParkGuarita/), organiza
 
 - `domain/`: enums, validação de placa e resultados das consultas.
 - `data/`: entidades, DAOs, banco (Room) e o repositório com as regras de negócio.
-- `viewmodel/`: ViewModels do porteiro e do painel.
-- `ui/`: telas em Jetpack Compose e navegação.
+- `viewmodel/`: ViewModels de cada perfil e do painel.
+- `ui/`: telas em Jetpack Compose, tema e navegação.
 
-Já estão implementados o fluxo do porteiro (consultar placa, registrar entrada e saída, veículos presentes) e o painel de ocupação. As telas de Administrador e Servidor/Professor estão em desenvolvimento.
+Os quatro perfis estão implementados (histórias US01 a US12): porteiro, administrador, servidor/professor e painel. Todos os dados ficam no próprio aparelho, sem servidor. Falta registrar os testes de aceitação de cada história e revisar o que o professor responder na entrevista. Os detalhes estão em [Modelo_Arquitetura.md](Documentos/Modelo_Arquitetura.md).
 
 ## Como rodar
 
 1. Abra a pasta `SmartParkGuarita/` no Android Studio e espere o Gradle sincronizar.
 2. Escolha um emulador ou um tablet Android (API 26 ou superior, com a depuração USB ligada) e clique em Run.
 3. Na primeira execução o app cria dados fictícios. Para testar, na tela do porteiro use `ABC1D23` (veículo cadastrado), `BRA2E19` (troca temporária de exemplo, válida por 7 dias) e `AAA0000` (não autorizado).
+4. Para testar o fluxo da troca temporária: no perfil Servidor/Professor, faça uma solicitação; no perfil Administrador, aprove em Solicitações; no perfil Porteiro, consulte a placa pedida.
 
 Testes unitários: `./gradlew :app:testDebugUnitTest` dentro da pasta `SmartParkGuarita/`.

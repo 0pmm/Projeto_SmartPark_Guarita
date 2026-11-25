@@ -34,7 +34,6 @@ import com.example.smartparkguarita.viewmodel.AdminViewModel
 import com.example.smartparkguarita.viewmodel.AppViewModelProvider
 import com.example.smartparkguarita.viewmodel.Aviso
 
-/** Menu do administrador. */
 @Composable
 fun AdminHomeScreen(
     aoVoltar: () -> Unit,
@@ -55,8 +54,6 @@ fun AdminHomeScreen(
         CartaoMenu("Painel", "Ocupação e movimento por turno", { aoNavegar(Rotas.PAINEL) })
     }
 }
-
-// ---------------------------------------------------------------- Servidores
 
 @Composable
 fun ServidoresScreen(
@@ -144,8 +141,6 @@ private fun FormularioServidor(
         dismissButton = { TextButton(onClick = aoCancelar) { Text("Cancelar") } }
     )
 }
-
-// ------------------------------------------------------------------ Veículos
 
 @Composable
 fun VeiculosScreen(
@@ -245,8 +240,6 @@ private fun FormularioVeiculo(
         dismissButton = { TextButton(onClick = aoCancelar) { Text("Cancelar") } }
     )
 }
-
-// --------------------------------------------------------- Trocas temporárias
 
 @Composable
 fun TrocasScreen(
@@ -359,8 +352,6 @@ fun FormularioTroca(
         dismissButton = { TextButton(onClick = aoCancelar) { Text("Cancelar") } }
     )
 }
-
-// -------------------------------------------------------------- Solicitações
 
 @Composable
 fun SolicitacoesScreen(
